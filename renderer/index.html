@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Invoice WhatsApp App</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div class="app-container">
+      <header>
+        <h1>Invoice &amp; WhatsApp Sender</h1>
+        <p>Fill the form below to generate an invoice PDF and send it to your customer via WhatsApp.</p>
+      </header>
+
+      <main>
+        <form id="invoice-form">
+          <section class="section">
+            <h2>Customer Details</h2>
+            <div class="form-row">
+              <label for="customerName">Customer Name</label>
+              <input type="text" id="customerName" name="customerName" required />
+            </div>
+            <div class="form-row">
+              <label for="phone">Phone Number (with country code)</label>
+              <input
+                type="text"
+                id="phone"
+                name="phone"
+                placeholder="919999999999"
+                required
+              />
+            </div>
+          </section>
+
+          <section class="section">
+            <h2>Items</h2>
+            <div id="items-container"></div>
+            <button type="button" id="add-item-btn" class="secondary">+ Add Item</button>
+          </section>
+
+          <section class="section actions">
+            <button type="submit" class="primary">Generate Invoice &amp; Send WhatsApp</button>
+          </section>
+        </form>
+
+        <section id="status-section">
+          <div id="status-message"></div>
+        </section>
+
+        <section class="section info">
+          <h2>WhatsApp Connection</h2>
+          <p id="wa-status-text" class="wa-status-text"></p>
+          <div class="wa-qr-container">
+            <img id="wa-qr-image" alt="WhatsApp QR code" />
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="./renderer.js"></script>
+  </body>
+  </html>
+
